@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="it">
 <head>
   <meta charset="UTF-8" />
@@ -6,7 +6,7 @@
   <title>Lettera Magica di Hogwarts</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&family=EB+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
   <style>
     * {
       box-sizing: border-box;
@@ -22,8 +22,7 @@
       height: 100%;
       overflow: hidden;
       background-color: #030205;
-      font-family: 'EB Garamond', serif;
-      color: #2b1f1d;
+      font-family: 'Cinzel', serif;
     }
 
     /* Initial Overlay Screen */
@@ -62,7 +61,6 @@
 
     .tap-hint {
       margin-top: 25px;
-      font-family: 'Cinzel', serif;
       font-size: 0.9rem;
       color: #8c7853;
       letter-spacing: 2px;
@@ -75,7 +73,7 @@
       50% { opacity: 1; transform: scale(1.02); text-shadow: 0 0 18px rgba(226, 192, 117, 0.9), 0 0 35px rgba(212, 160, 23, 0.7); }
     }
 
-    /* Parchment & Container */
+    /* Page Container for Image */
     #page-container {
       position: relative;
       width: 100%;
@@ -83,152 +81,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 10px;
     }
 
-    .parchment {
-      position: relative;
-      width: 100%;
-      max-width: 750px;
-      max-height: 95vh;
-      aspect-ratio: 1 / 1.414;
-      background: #dfca9a;
-      background-image: 
-        radial-gradient(circle at 50% 50%, rgba(244, 230, 198, 0.95), rgba(214, 185, 137, 0.9)),
-        radial-gradient(circle at 10% 20%, rgba(138, 93, 44, 0.15), transparent 40%),
-        radial-gradient(circle at 90% 80%, rgba(110, 70, 30, 0.2), transparent 40%);
-      box-shadow: 0 0 50px rgba(0,0,0,0.9);
-      padding: 40px 45px;
-      overflow-y: auto;
-      border-radius: 4px;
-      border: 1px solid #c2a670;
-    }
-
-    /* Hogwarts Header */
-    .crest-container {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .crest-svg {
-      width: 90px;
-      height: auto;
-      filter: drop-shadow(0px 2px 3px rgba(0,0,0,0.2));
-    }
-
-    .school-title {
-      font-family: 'Cinzel Decorative', 'Cinzel', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-align: center;
-      letter-spacing: 1.5px;
-      color: #1a110b;
-      margin-top: 5px;
-    }
-
-    .sub-header {
-      font-family: 'Cinzel', serif;
-      text-align: center;
-      font-size: 0.82rem;
-      color: #4a3828;
-      margin-bottom: 20px;
-      line-height: 1.3;
-    }
-
-    .divider {
-      text-align: center;
-      font-size: 1rem;
-      color: #8c6d3f;
-      margin: 8px 0;
-    }
-
-    /* Letter Body Content */
-    .recipient {
-      font-weight: bold;
-      margin-bottom: 12px;
-      font-size: 1.05rem;
-    }
-
-    .salutation {
-      margin-bottom: 12px;
-    }
-
-    .paragraph {
-      text-align: justify;
-      text-justify: inter-word;
-      line-height: 1.48;
-      font-size: 1.02rem;
-      margin-bottom: 12px;
-      text-indent: 18px;
-    }
-
-    .honorary-title {
-      text-align: center;
-      font-family: 'Cinzel', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: #1a110b;
-      margin: 18px 0;
-      letter-spacing: 1px;
-    }
-
-    .quote-box {
-      font-style: italic;
-      text-align: center;
-      margin: 15px 0;
-      padding: 0 10px;
-      color: #22150c;
-    }
-
-    .closing {
-      margin-top: 20px;
-      font-size: 1rem;
-    }
-
-    .signature-area {
-      margin-top: 15px;
-      position: relative;
-    }
-
-    .signature-font {
-      font-family: 'Tangerine', cursive;
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #160f0a;
-      line-height: 0.9;
-    }
-
-    .signature-title {
-      font-size: 0.88rem;
-      line-height: 1.25;
-      color: #3b2b1d;
-    }
-
-    .seal-stamp {
-      position: absolute;
-      right: 10px;
-      bottom: 0px;
-      width: 105px;
-      height: 105px;
-      border-radius: 50%;
-      border: 3px double #3a2215;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0.82;
-      transform: rotate(-8deg);
-      font-family: 'Cinzel', serif;
-      color: #3a2215;
-      text-align: center;
-      padding: 5px;
-      box-shadow: inset 0 0 8px rgba(0,0,0,0.15);
-    }
-
-    .seal-inner {
-      font-size: 0.55rem;
-      letter-spacing: 0.5px;
-      font-weight: bold;
+    #letter-img {
+      max-width: 100%;
+      max-height: 96vh;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
     }
 
     /* Canvas Overlays */
@@ -241,27 +102,10 @@
       pointer-events: none;
     }
 
-    #darkness-canvas {
-      z-index: 10;
-    }
+    #darkness-canvas { z-index: 10; }
+    #sparkle-canvas { z-index: 20; }
 
-    #sparkle-canvas {
-      z-index: 20;
-    }
-
-    /* Media Queries for Mobile Responsiveness */
     @media (max-width: 600px) {
-      .parchment {
-        padding: 25px 22px;
-        max-height: 98vh;
-      }
-      .school-title { font-size: 0.98rem; }
-      .sub-header { font-size: 0.75rem; }
-      .paragraph { font-size: 0.92rem; line-height: 1.4; text-indent: 12px; margin-bottom: 9px; }
-      .honorary-title { font-size: 1.2rem; margin: 12px 0; }
-      .signature-font { font-size: 2.2rem; }
-      .seal-stamp { width: 85px; height: 85px; right: 0; }
-      .seal-inner { font-size: 0.45rem; }
       .intro-text { font-size: 1.3rem; }
     }
   </style>
@@ -270,7 +114,6 @@
 
   <!-- Audio Element -->
   <audio id="bg-music" loop preload="auto">
-    <!-- Royalty free magical soundtrack -->
     <source src="musica.mp3" type="audio/mpeg">
   </audio>
 
@@ -280,103 +123,9 @@
     <div class="tap-hint">Tocca lo schermo per iniziare</div>
   </div>
 
-  <!-- Parchment Letter -->
+  <!-- Letter Image -->
   <div id="page-container">
-    <div class="parchment" id="letter">
-      
-      <div class="crest-container">
-        <!-- SVG Hogwarts Crest -->
-        <svg class="crest-svg" viewBox="0 0 200 220" xmlns="http://www.w3.org/2000/svg">
-          <path d="M100,10 L170,40 L170,130 C170,170 100,200 100,200 C100,200 30,170 30,130 L30,40 Z" fill="none" stroke="#2b1f1d" stroke-width="4"/>
-          <path d="M100,10 L100,200 M30,110 L170,110" stroke="#2b1f1d" stroke-width="3"/>
-          <circle cx="100" cy="110" r="22" fill="#dfca9a" stroke="#2b1f1d" stroke-width="3"/>
-          <text x="100" y="119" font-family="'Cinzel', serif" font-size="24" font-weight="bold" fill="#1a110b" text-anchor="middle">H</text>
-          <!-- Ribbon Top -->
-          <path d="M40,25 Q100,5 160,25" fill="none" stroke="#2b1f1d" stroke-width="2"/>
-          <text x="100" y="21" font-family="'Cinzel', serif" font-size="11" font-weight="bold" fill="#1a110b" text-anchor="middle">HOGWARTS</text>
-        </svg>
-      </div>
-
-      <div class="school-title">SCUOLA DI MAGIA E STREGONERIA DI HOGWARTS</div>
-      <div class="sub-header">
-        Ufficio Ammissioni<br>
-        Castello di Hogwarts, Scozia
-      </div>
-
-      <div class="divider">✦ ─── ❖ ─── ✦</div>
-
-      <div class="recipient">Alla cortese attenzione della Signorina Andrea Villarreal</div>
-
-      <div class="salutation">Gentile Signorina Villarreal,</div>
-
-      <div class="paragraph">
-        desideriamo porgerLe le nostre più sincere scuse per l'eccezionale ritardo nella consegna della presente.
-      </div>
-
-      <div class="paragraph">
-        A seguito di una recente revisione degli Archivi dell'Ufficio Gufi, è emerso che la Sua lettera di ammissione, preparata nell'estate del Suo undicesimo compleanno, non Le è mai stata recapitata.
-      </div>
-
-      <div class="paragraph">
-        Dopo un'indagine condotta con la collaborazione del Ministero della Magia, è stato accertato che il gufo incaricato della consegna decise di fermarsi per una breve sosta presso il Paiolo Magico. Da quel momento le sue tracce si persero per molti anni e la Sua lettera venne erroneamente classificata come "In viaggio".
-      </div>
-
-      <div class="paragraph">
-        Solo di recente il plico è stato ritrovato, ancora perfettamente sigillato, all'interno di un vecchio armadio dell'Ufficio Gufi, nascosto dietro una pila di inviti al Torneo Tremaghi e alcune centinaia di richieste di certificazione per bacchette smarrite.
-      </div>
-
-      <div class="paragraph">
-        Sebbene il ritardo ammonti ormai a ventinove anni, riteniamo che la magia non conosca né il tempo né l'età.
-      </div>
-
-      <div class="paragraph">
-        Per questo motivo, il Consiglio di Hogwarts ha deliberato all'unanimità di considerare valida la Sua ammissione e di conferirLe il titolo straordinario e onorifico di
-      </div>
-
-      <div class="honorary-title">✦ Strega Onoraria di Hogwarts ✦</div>
-
-      <div class="paragraph">
-        in riconoscimento della fedeltà dimostrata verso il mondo magico, della capacità di continuare a sognare e del fatto che, nonostante il mancato recapito della nostra lettera, Lei non ha mai smesso di sentirsi parte di questa grande famiglia.
-      </div>
-
-      <div class="paragraph">
-        In occasione del Suo quarantesimo compleanno, siamo lieti di consegnarLe ufficialmente ciò che avrebbe dovuto ricevere molti anni fa.
-      </div>
-
-      <div class="quote-box">
-        "Perché alcuni treni partono una sola volta.<br>
-        Ma Hogwarts trova sempre il modo di aspettare chi è destinato a farne parte."
-      </div>
-
-      <div class="paragraph">
-        Le auguriamo che la curiosità non La abbandoni mai, che abbia sempre il coraggio di affrontare ogni nuova avventura e che la magia continui ad accompagnarLa in ogni giorno della Sua vita.
-      </div>
-
-      <div class="closing">
-        Con i nostri più sinceri auguri,<br>
-        <strong>Buon 40° compleanno, Andrea.</strong><br>
-        La Sua lettera è finalmente arrivata.
-      </div>
-
-      <div class="signature-area">
-        <div style="margin-top: 15px;">Con i migliori saluti,</div>
-        <div class="signature-font">Minerva McGranitt</div>
-        <div class="signature-title">
-          <strong>Minerva McGranitt</strong><br>
-          Preside<br>
-          Scuola di Magia e Stregoneria di Hogwarts
-        </div>
-
-        <div class="seal-stamp">
-          <div class="seal-inner">
-            HOGWARTS SCHOOL<br>
-            ★ ★ ★<br>
-            OF WITCHCRAFT & WIZARDRY
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <img src="lettera.png" id="letter-img" alt="Lettera Magica di Hogwarts">
   </div>
 
   <!-- Canvas elements for darkness and magic light effects -->
@@ -384,7 +133,6 @@
   <canvas id="sparkle-canvas"></canvas>
 
   <script>
-    // Audio and Overlay Control
     const overlay = document.getElementById('start-overlay');
     const audio = document.getElementById('bg-music');
     let hasStarted = false;
@@ -393,14 +141,11 @@
       if (hasStarted) return;
       hasStarted = true;
       
-      // Play audio
-      audio.volume = 0.5;
-      audio.play().catch(err => console.log("Audio play blocked:", err));
+      audio.volume = 0.6;
+      audio.play().catch(err => console.log("Audio autoplay blocked:", err));
 
-      // Hide overlay
       overlay.classList.add('hidden');
 
-      // Initialize touch coordinates for instant light effect
       const touch = e.touches ? e.touches[0] : e;
       targetX = touch.clientX;
       targetY = touch.clientY;
@@ -413,7 +158,6 @@
     overlay.addEventListener('click', startExperience);
     overlay.addEventListener('touchstart', startExperience, { passive: false });
 
-    // Interactive Magic Canvas
     const darkCanvas = document.getElementById('darkness-canvas');
     const darkCtx = darkCanvas.getContext('2d');
     const sparkCanvas = document.getElementById('sparkle-canvas');
@@ -427,7 +171,6 @@
     window.addEventListener('resize', resize);
     resize();
 
-    // Interaction State
     let isPressed = false;
     let currentX = -1000;
     let currentY = -1000;
@@ -436,7 +179,6 @@
     let touchStartTime = 0;
     let particles = [];
 
-    // Pointer Input Handlers
     function handlePointerDown(e) {
       if (!hasStarted) return;
       isPressed = true;
@@ -469,17 +211,15 @@
     window.addEventListener('touchmove', handlePointerMove, { passive: true });
     window.addEventListener('touchend', handlePointerUp);
 
-    // Sparkle Particle Class
     class GoldenSparkle {
       constructor(x, y) {
         this.x = x + (Math.random() - 0.5) * 20;
         this.y = y + (Math.random() - 0.5) * 20;
         this.size = Math.random() * 3.5 + 1.5;
         this.speedX = (Math.random() - 0.5) * 2.5;
-        this.speedY = Math.random() * 2 + 1; // Falling downwards like magic dust
+        this.speedY = Math.random() * 2 + 1;
         this.life = 1.0;
         this.decay = Math.random() * 0.02 + 0.012;
-        // Warm golden tones
         const hues = [45, 48, 52, 40];
         this.hue = hues[Math.floor(Math.random() * hues.length)];
       }
@@ -505,44 +245,35 @@
       }
     }
 
-    // Main Render Loop
     function animate() {
       requestAnimationFrame(animate);
 
-      // Smooth wand positioning
       currentX += (targetX - currentX) * 0.25;
       currentY += (targetY - currentY) * 0.25;
 
-      // 1. Render Darkness and Wand Light Hole
       darkCtx.clearRect(0, 0, width, height);
       darkCtx.fillStyle = 'rgba(3, 2, 6, 0.96)';
       darkCtx.fillRect(0, 0, width, height);
 
       if (isPressed) {
         const holdDuration = Date.now() - touchStartTime;
-        
-        // Base light radius when touching (reading light)
         let radius = 110;
         let intensity = 0.92;
 
-        // If held stationary/pressed for > 1.5s, intensify the lumos light
         if (holdDuration > 1500) {
           const intenseProgress = Math.min(1, (holdDuration - 1500) / 1000);
-          radius += intenseProgress * 70; // expands radius up to ~180px
+          radius += intenseProgress * 70;
           intensity = 0.98;
 
-          // Spawn golden sparkles!
           for (let i = 0; i < 2; i++) {
             particles.push(new GoldenSparkle(currentX, currentY));
           }
         } else {
-          // Slight sparkle during movement
           if (Math.random() < 0.4) {
             particles.push(new GoldenSparkle(currentX, currentY));
           }
         }
 
-        // Cut out light circle with soft gradient glow using destination-out
         darkCtx.save();
         darkCtx.globalCompositeOperation = 'destination-out';
 
@@ -560,7 +291,6 @@
         darkCtx.fill();
         darkCtx.restore();
 
-        // Add a warm magical halo ring around the light source
         darkCtx.save();
         darkCtx.globalCompositeOperation = 'source-over';
         const haloGradient = darkCtx.createRadialGradient(
@@ -578,7 +308,6 @@
         darkCtx.restore();
       }
 
-      // 2. Render Golden Sparkles
       sparkCtx.clearRect(0, 0, width, height);
       for (let i = particles.length - 1; i >= 0; i--) {
         particles[i].update();
